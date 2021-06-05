@@ -5,7 +5,7 @@ test/
 *.pyc
 *.psd
 *.log
-*.db
+# *.db
 *.json
 *.sqlite
 # config.py
