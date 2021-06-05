@@ -1,11 +1,11 @@
 __pycache__/
 config/
 test/
-db/
+# db/
 *.pyc
 *.psd
 *.log
 *.db
 *.json
 *.sqlite
-config.py
+# config.py
