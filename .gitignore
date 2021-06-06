@@ -8,4 +8,4 @@ test/
 # *.db
 *.json
 *.sqlite
-# config.py
+config.py
