@@ -17,6 +17,16 @@ bot = Bot(token=config.TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 db = SQLighter('db/database.db')
 
+@dp.message_handler(commands=['start'])
+async def start(message: types.Message):
+    msg = 'Я бот для подсчёта кармы в группе, просто добавьте меня в группу и плюсуйте друг другу в карму.\n/help - справка о командах'
+    await message.answer(msg, parse_mode='html')
+
+@dp.message_handler(commands=['help'])
+async def start(message: types.Message):
+    msg = '+ Плюсануть в карму можно начав сообщение со спасибо или плюса.\n- Минусануть - с минуса.\nЧтобы выбрать пользователя - нужно ответить реплаем на сообщение пользователя.\nСила, с которой пользователь меняет другим карму, зависит от собственной кармы, чем она больше, тем больше будет изменение кармы у цели (вычисляется как корень из кармы)\nОсновные команды:\n/top - топ юзеров по карме для текущего чата\n/help - справка о командах'
+    await message.answer(msg, parse_mode='html')
+
 
 @dp.message_handler(commands=['top'])
 async def top(message: types.Message):

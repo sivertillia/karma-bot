@@ -1,0 +1,18 @@
+heroku login
+heroku init
+heroku git:remote -a app-karma-bot
+
+git add .
+git commit -am "Comment"
+git push heroku master
+
+heroku ps:scale worker=1
+
+CREATE TABLE "user_karma" (
+	"id"	INTEGER NOT NULL,
+	"group_id"	INTEGER NOT NULL,
+	"user_id"	INTEGER NOT NULL,
+	"user_fullname"	TEXT NOT NULL,
+	"karma"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
